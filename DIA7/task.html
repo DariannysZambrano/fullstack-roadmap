@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <style>
+        /* create your style here */
+        del {
+            text-decoration: none;
+        }
+        ins {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>
+        Tasks
+    </h2>
+
+    <ol>
+      <del><ins><li>wake up</li></ins></del>
+    </ol>
+
+    <input type="text" id="task">
+    <button id="add_task_button">Add Task</button>
+
+
+    <script>
+         // Nombre ol
+         const taskList = document.querySelector('ol')
+         const addTaskButton = document.getElementById('add_task_button');
+         addTaskButton.addEventListener('click', function () {
+             const taskInput = document.getElementById('task');
+             const taskValue = taskInput.value.trim()
+             if (taskValue !== '') {
+              
+
+                 const currentIns = taskList.querySelector('ins');
+                 if (currentIns) {
+                     const delElement = document.createElement('del');
+                     delElement.textContent = currentIns.textContent;
+                     delElement.style.backgroundColor = 'lightcoral';
+                     delElement.style.textDecoration = 'line-through';
+
+                   
+                    currentIns.parentNode.replaceChild(delElement, currentIns);
+                }
+
+                const newIns = document.createElement('ins');
+                newIns.textContent = taskValue;
+                newIns.style.backgroundColor = 'lightgreen';
+                newIns.style.textDecoration = 'underline';
+
+                const newTaskItem = document.createElement('li');
+                newTaskItem.appendChild(newIns);
+                taskList.appendChild(newTaskItem);
+
+                taskInput.value = '';
+            }
+        });
+
+
+    //     // Nombre input
+    //     const taskInput = document.getElementById('task');
+    //     // Nombre boton
+    //     const addTaskButton = document.getElementById('add_task_button');
+
+    //     addTaskButton.addEventListener('click', function () {
+
+    //         // Valor input
+    //         const taskValue = taskInput.value.tri
+    //         if (taskValue !== ''){
+    //     // Nombre ol
+    //     const taskList = document.querySelector('ol');
+
+    //     const newIns = document.createElement('ins')         
+    //     newIns.textContent = taskValue;
+    //      newIns.style.backgroundColor = 'lightgreen';
+    //      newIns.style.textDecoration = 'underline';
+
+    //      const newTaskItem = document.createElement('li');
+    //      newTaskItem.appendChild(newIns);
+    //     taskList.appendChild(newTaskItem);
+
+    //     const previousItem = newTaskItem.previousElementSibling;
+
+    //       if(previousItem){
+    //         const previousIns = previousItem.querySelector('ins');
+    //         if(previousIns){
+
+    //             previousIns.style.backgroundColor = 'lightcoral';
+    //             previousIns.style.textDecoration = 'line-through';
+    //         }
+    //       }
+    //         taskInput.value = '';
+
+
+    //     }
+    // })
+    </script>
+</body>
+
+</html>
