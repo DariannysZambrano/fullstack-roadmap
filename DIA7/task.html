@@ -33,22 +33,43 @@
     <script>
          // Nombre ol
          const taskList = document.querySelector('ol')
+//Selecciona el primer elemento <ol> del documento y lo guarda en la variable taskList.
+// Es la lista donde se agregarán las tareas.
          const addTaskButton = document.getElementById('add_task_button');
+//Guarda en addTaskButton el botón de agregar tarea (el que tiene id="add_task_button").
          addTaskButton.addEventListener('click', function () {
+//Guarda el botón con id="add_task_button" en una variable para poder escuchar el clic del usuario.
              const taskInput = document.getElementById('task');
+//Agrega un "escuchador" de eventos al botón.
+//Cada vez que el usuario hace clic en el botón, se ejecuta la función que está entre llaves {...}.
              const taskValue = taskInput.value.trim()
              if (taskValue !== '') {
-              
+// taskInput → obtiene el campo de texto (<input id="task">).
+// taskInput.value → toma lo que escribió el usuario.
+// .trim() → elimina espacios al principio y al final.
+// Resultado: taskValue es el texto limpio que escribió el usuario.
 
                  const currentIns = taskList.querySelector('ins');
                  if (currentIns) {
+//Busca dentro de la lista (<ol>) si ya hay un elemento <ins> (la tarea más reciente marcada como “insertada”).
                      const delElement = document.createElement('del');
                      delElement.textContent = currentIns.textContent;
+// if (currentIns)
+// → Solo entra aquí si ya existe una tarea “nueva” (<ins>).
+
+// document.createElement('del')
+// → Crea un nuevo elemento <del> vacío.
+
+// delElement.textContent = currentIns.textContent;
+// Lee el texto que está dentro del elemento <ins> (por ejemplo "Wake up")
+    //Escribe ese mismo texto dentro del nuevo <del>
+// → Copia el texto del <ins> anterior (la tarea anterior) al nuevo <del>.
                      delElement.style.backgroundColor = 'lightcoral';
                      delElement.style.textDecoration = 'line-through';
 
                    
                     currentIns.parentNode.replaceChild(delElement, currentIns);
+// reemplaza en el dom el ins por el del 
                 }
 
                 const newIns = document.createElement('ins');
