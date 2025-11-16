@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.body{
+    background-color: #232830;
+    color: aliceblue;
+    margin-left:218px;
+    margin-top: 75px;
+    margin-right:226px;
+}
+
+.writings{
+  
+}
+
+.pageHeader{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.primerNav li {
+    list-style: none;
+}
+
+.titulo{
+    color: #FF7575;
+    text-align: center;
+}
+
+.ParrafoTitulo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.segundoNav{
+    display: flex;
+    justify-content: space-between;
+}
+
