@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     max-width: 100%;
+    overflow-x: hidden;
+   overflow-y: auto;
 }
 
 body {
@@ -24,6 +26,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 300;
+    padding-bottom: 30px;
 }
 
 .barraNavegacion li {
@@ -32,6 +35,14 @@ body {
 
 .header {
     text-align: center;
+    padding-bottom: 60px;
+}
+
+.header img {
+   margin-bottom: 25px;
+   margin-left: 10px;
+   width: 150px;
+   height: 150px;
 }
 
 .titulo {
@@ -40,39 +51,42 @@ body {
     font-style: italic;
     font-weight: 400;
     font-size: 40px;
+    margin-bottom: 15px;
 }
 
 .ParrafoTitulo {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 300;
+    margin-bottom: 0;
 }
 
 .segundoNav {
     display: flex;
     align-items: center;
-    gap: 1.875rem;
+    gap: 1rem;
     list-style: none;
     font-family: "Recursive", sans-serif;
     font-style: italic;
     font-weight: 100;
     color: #909090;
+    padding-top: 10px;
+    padding-bottom: 40px;
 }
 
 .segundoNav ul {
     list-style: none;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    gap: 3.75rem;
+    margin-top: 0%;
+    gap: 45px;
 }
 
 .container-articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
 
 .Article {
@@ -169,6 +183,12 @@ label {
    
 }
 
+hr{
+  width: 100%;
+  border: none;
+  height: 2px;
+  background-color: #4d4d4d42;
+}
 
 input[type="text"],
 input[type="date"],
@@ -229,12 +249,6 @@ button[type="submit"]:hover {
     font: 500 ;
 }
 
-.grupo-izquierda {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
 
 .botonFinal {
     background: #4699E0;
@@ -256,3 +270,4 @@ button[type="submit"]:hover {
     width: 150px;
     height: 30px; 
 }
+
