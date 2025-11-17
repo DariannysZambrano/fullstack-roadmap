@@ -96,7 +96,7 @@ body {
 .Article {
     background-color: #FFFFFF;
     border-radius: 20px;
-    padding: 24px;
+    padding: 18px;
     max-width: 360px;
     height: auto;
     box-sizing: border-box;
@@ -104,12 +104,11 @@ body {
     flex-direction: column;
 }
 
-
 .tituloDeLosArticulos {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 19px;
+    font-size: 15px;
     line-height: 28px;
     margin-top: 20px;
     margin-bottom: 13px;
@@ -121,7 +120,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 24px;
     margin-bottom: 24px;
 }
@@ -132,9 +131,8 @@ body {
     color: #0F1217;
     font-family: 'Poppins', sans-serif;
     font-style: regular;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: auto;
-
 }
 
 section {
