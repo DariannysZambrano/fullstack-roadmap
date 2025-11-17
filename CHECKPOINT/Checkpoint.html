@@ -167,9 +167,9 @@
             </article>
         </div>
 
-        <section class="sectionForm">
-            <h3 class="titulo">Submit Your Article</h3>
-            <p class="ParrafoTitulo">Want to share your knowledge with the developer community? Use the form below!</p>
+        <section>
+            <h3 class="titulo-form">Submit Your Article</h3>
+            <p class="Parrafo-form">Want to share your knowledge with the developer community? Use the form below!</p>
 
             <form action="" class="form-group-info">
 
@@ -180,28 +180,30 @@
                     <input type="file" id="articleImage" required>
 
                     <label for="articleTitle">Title</label>
-                    <input type="text" id="articleTitle" required>
+                    <input type="text" id="articleTitle"  placeholder="Ej: Niños perdidos en el amazonas" required>
 
                     <label for="articleDescription">Description</label>
-                    <input type="text" id="articleDescription" required>
+                    <input type="text" id="articleDescription" placeholder="Ej: foto de la Serpiente que salvo a los niños y los cuido"  required>
 
                     <label for="articleDate">Date</label>
                     <input type="date" id="articleDate" required>
 
                     <label for="articleCategory">Category</label>
-                    <input type="text" id="articleCategory" required>
+                    <input type="text" id="articleCategory" placeholder="Ej: DevOps, JavaScript, Cloud, Terraform..."  required>
                 </fieldset>
                 <button type="submit">Submit</button>
             </form>
         </section>
     </main>
 
-    <footer class="final">
+  <footer class="final">
+    <div class="grupo-izquierda">
         <span>writings.dev</span>
-        <button>by @kamrify</button>
-        <button> <i class="fa-brands fa-twitter"></i> Follow @writingsdev</button>
-    </footer>
+        <button class="botonFinal izquierda">by @kamrify</button>
+    </div>
 
+    <button class="botonFinal Derecha">Follow @writingsdev</button>
+</footer>
 
 </body>
 

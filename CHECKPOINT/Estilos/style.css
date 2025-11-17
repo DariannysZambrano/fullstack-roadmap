@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
     margin: 0;
@@ -12,9 +10,9 @@
 body {
     background-color: #232830;
     color: aliceblue;
-    margin-left: 218px;
-    margin-top: 75px;
-    margin-right: 226px;
+    margin-left: 13.625rem; /* 218px */
+    margin-top: 4.6875rem;  /* 75px */
+    margin-right: 14.125rem; /* 226px */
 }
 
 .primerNav,
@@ -22,9 +20,9 @@ body {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    gap: 10px;
+    gap: 0.625rem;
     font-family: 'Poppins', sans-serif;
-    font-style: regular;
+    font-style: normal;
     font-weight: 300;
 }
 
@@ -41,18 +39,19 @@ body {
     font-family: "Recursive", sans-serif;
     font-style: italic;
     font-weight: 400;
+    font-size: 40px;
 }
 
 .ParrafoTitulo {
     font-family: "Poppins", sans-serif;
-    font-style: regular;
+    font-style: normal;
     font-weight: 300;
 }
 
 .segundoNav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 1.875rem;
     list-style: none;
     font-family: "Recursive", sans-serif;
     font-style: italic;
@@ -67,75 +66,193 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
-    gap: 60px;
+    gap: 3.75rem;
 }
 
 .container-articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .Article {
     background-color: #FFFFFF;
-    border-radius: 15px;
-    padding: 20px;
-    max-width: 1200px;
+    border-radius: 0.9375rem;
+    padding: 1.25rem;
+    max-width: 75rem;
     margin: 0 auto;
     flex-direction: column;
 }
 
 .tituloDeLosArticulos {
     font-family: "Poppins", sans-serif;
-    font-style: semi-bold;
+    font-style: normal;
     font-weight: 600;
-    font-size: 19px;
-    line-height: 28px;
-    margin-top: 33px;
-    margin-bottom: 13px;
+    font-size: 1.1875rem;  /* 19px */
+    line-height: 1.75rem;  /* 28px */
+    margin-top: 2.0625rem; /* 33px */
+    margin-bottom: 0.8125rem; /* 13px */
     color: #0F1217;
 }
 
-.ParrafoDeLosArticulos{
+.ParrafoDeLosArticulos {
     color: #0F1217;
-    font-family: poppins, sans-serif;
-    font-style: regular;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem; /* 16px */
 }
 
-    .pieDePg {
-        display: flex;
-        justify-content: space-between;
-    }
+.pieDePg {
+    display: flex;
+    justify-content: space-between;
+    color: #0F1217;
+    font-family: 'Poppins', sans-serif;
+    font-style: regular;
 
-    .sectionForm {
-        text-align: center;
-    }
+}
 
-    .form-group-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
+section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px;
+    background:  #67707e10;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
 
-    .form-group-info fieldset {
-        border: 2px solid #FF7575;
-        border-radius: 10px;
-        padding: 20px;
-        width: 50%;
-    }
+.titulo-form{
+    color: #FF7575;
+    font-family: "Recursive", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    font-size: 30px;
+}
 
-    .form-group-info legend {
-        font-weight: bold;
-        font-size: 1.2em;
-    }
+.Parrafo-form {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 1rem;
+}
 
-    .final {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 50px;
-        padding-bottom: 100px;
-    }
+.form-group-info {
+    padding: 25px;
+    border-radius: 12px;
+    background:#67707e10;;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color:#fd5e5e;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+   
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="file"] {
+    color: #ffffff;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #00000054;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+input::placeholder {
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+
+}
+input[type="file"]::file-selector-button {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 0.85rem;
+}
+
+button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1e2229;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: #0F1217;
+}
+
+.final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3.125rem;
+    padding-bottom: 6.25rem;
+    font-family: "Source Sans Pro", sans-serif;
+     font-style: Semibold;
+    font: 500 ;
+}
+
+.grupo-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.botonFinal {
+    background: #4699E0;
+    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botonFinal.izquierda {
+    width: 100px;
+    height: 30px;
+}
+
+
+.botonFinal.Derecha {
+    width: 150px;
+    height: 30px; 
+}
