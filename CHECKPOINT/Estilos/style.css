@@ -16,7 +16,6 @@ body {
     margin-left: 218px;
     margin-top: 75px;
     margin-right: 218px;
-    
 }
 
 .primerNav,
@@ -39,6 +38,10 @@ body {
 .header {
     text-align: center;
     padding-bottom: 60px;
+}
+
+.separador {
+    position:absolute
 }
 
 .header img {
@@ -279,8 +282,8 @@ button[type="submit"]:hover {
 
 
 .botonFinal.Derecha {
-    width: 150px;
-    height: 30px;
+    width: 180px;
+    height: 40px;
 }
 
 hr {
@@ -288,6 +291,7 @@ hr {
     border: none;
     height: 2px;
     background-color: #4d4d4d42;
+    width: 100vw;
 }
 
 
@@ -304,7 +308,6 @@ hr {
          margin: 20px 20px 20px 20px  ;
          gap: 0;
          display: grid;
-        
     }
 }
 
