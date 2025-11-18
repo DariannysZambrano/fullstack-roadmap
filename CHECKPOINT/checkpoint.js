@@ -26,7 +26,7 @@ form.addEventListener('submit', function(event) {
     newform.appendChild(desc);
     
     containerArticlesNews = document.querySelector('.container-articles');
-   // containerArticlesNews.appendChild(newform);
+   containerArticlesNews.appendChild(newform);
     
 
     form.reset();
