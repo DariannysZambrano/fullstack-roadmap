@@ -136,7 +136,7 @@ body {
 
 .pieDePg {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
     color: #0F1217;
     font-family: 'Poppins', sans-serif;
     font-style: regular;
@@ -177,7 +177,7 @@ section {
 }
 
 fieldset {
-  border-color: #fd5e5e2c;
+    border: none;
     padding: 0;
     margin: 0;
 }
