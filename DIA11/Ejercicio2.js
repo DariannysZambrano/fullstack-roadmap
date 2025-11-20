@@ -1,8 +1,7 @@
 function LeerInvertido(String){
     const TextoNormal = String.toLowerCase();
-    const  separarCaracteres = TextoNormal.split("");
-    const  invertirCaracteres = separarCaracteres.reverse();
-    const JuntarLoInvertido = invertirCaracteres.join("");
+    const  TextoNormal = String.reverse();
+    
 
     if(TextoNormal === JuntarLoInvertido){
         return true;
