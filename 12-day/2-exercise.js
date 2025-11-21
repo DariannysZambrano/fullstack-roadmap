@@ -11,7 +11,11 @@ let animal = {
     gender:"Hembra",
 }
 
+
 function recibir(object, string) {
-    
+    delete object[string]
+  return object
 }
+
+console.log (recibir (animal, "age"));
 
