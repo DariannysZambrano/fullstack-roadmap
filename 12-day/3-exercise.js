@@ -13,5 +13,9 @@ let animal = {
 }
 
 function recibir(object, string1, string2){
-    
+    object[string1] = string2
+    return object
+
 }
+
+console.log(recibir(animal, "color de ojos", "azul"))
