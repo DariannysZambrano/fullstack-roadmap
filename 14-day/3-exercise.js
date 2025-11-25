@@ -4,11 +4,18 @@
     */
 
 function Py() {
-    let message = prompt("Ingrese un mensaje");
+    let message = "helloo! welcome to my english podcast"
     let characters = message.split("")
     console.log(characters);
     let firstTwoCharacters = message.slice(0, 2);
-    if (firstTwoCharacters === "Py") {
+    let devolverCharacters= firstTwoCharacters.join("");
+
+    if (devolverCharacters === "Py") {
         return message;
+    }else{
+         let newMessage = message + "Py";
+            console.log(newMessage);
     }
 }
+
+Py();
