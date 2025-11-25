@@ -3,3 +3,8 @@
  * The string length must be broader than or equal to 1.  
  */
 
+ function changingPosition(){
+    let message = prompt("Ingrese un mensaje");
+    let characters = message.split("");
+    let firstCharacter = characters[2];
+}
