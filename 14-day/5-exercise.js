@@ -6,5 +6,4 @@
  function changingPosition(){
     let message = prompt("Ingrese un mensaje");
     let characters = message.split("");
-    let firstCharacter = characters[2];
 }
