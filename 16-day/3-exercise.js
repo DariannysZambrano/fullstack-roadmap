@@ -8,14 +8,14 @@
 let option = "1";
 
 switch(option){
-    case "1": {
+    case "1": 
         console.log("Agregar producto")
         break;
-    } case "2" : {
+     case "2" : 
         console.log("Eliminar producto")
         break;
-    } case "3":{
+    case "3":
         console.log("salir")
         break;
-    }
+    
 }
