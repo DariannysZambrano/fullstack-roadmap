@@ -9,4 +9,4 @@ function temperature (temperatureNum){
         console.log("Clima agradable");
     }
 }
-temperature(10);
+temperature(45);

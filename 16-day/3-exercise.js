@@ -5,7 +5,7 @@
 // Si es "2": imprime “Eliminar producto”
 // Si es "3": imprime “Salir”
 
-let option = "3";
+let option = "1";
 
 switch(option){
     case "1": {

@@ -7,7 +7,7 @@
 // Si la nota < 5: “Reprobado”
 
 
-const note = 7; 
+const note = 5; 
 
 if (note >9) {
     console.log("Excelente")
