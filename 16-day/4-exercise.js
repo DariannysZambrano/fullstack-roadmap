@@ -6,12 +6,12 @@
 // Si no está activo: “Acceso denegado”
 //  Objetivo: Practicar operadores lógicos (&&, ||) con if.
 
-let usuarioActivo = false;
+let usuarioActivo = true;
 let  rol = "no";
 
-if ((usuarioActivo === true) && (rol === "admin")){
+if ((usuarioActivo) && (rol === "admin")){
     console.log("Acceso total")
-} else if(usuarioActivo === true){
+} else if(usuarioActivo){
     console.log("Acceso limitado")
 }else{
     console.log("Acceso denegado")
