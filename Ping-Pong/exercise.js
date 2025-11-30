@@ -21,16 +21,19 @@
 
 function receiveNamesAndPoints(namePlayer1, namePlayer2,  pointPlayer1, pointPlayer2 ) {
     let totalPuntos = pointPlayer1 + pointPlayer2
+    
+    if(pointPlayer1 === 11){
+        console.log("La ganadora es " + namePlayer1 + " !! 🎉🎊🎀😸")
+        return
+    }else if(pointPlayer2 === 11){
+         console.log("La ganadora es " + namePlayer2 + " !! 🎨🎈🧨✨")
+         return;
+    }
+
     if(totalPuntos %2){
         console.log("Saca el jugador: " + namePlayer2)
     }else{
          console.log("Saca el jugador: " + namePlayer1)
-    }
-
-    if(pointPlayer1 === 11){
-        console.log("La ganadora es " + namePlayer1 + " !! 🎉🎊🎀😸")
-    }else if(pointPlayer2 === 11){
-         console.log("La ganadora es " + namePlayer2 + " !! 🎨🎈🧨✨")
     }
 }
 
