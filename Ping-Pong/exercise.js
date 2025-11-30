@@ -13,12 +13,6 @@
 // - Quién debe sacar en este momento
 // - Si el juego ha terminado y quién ganó
 
-
-// let namePlayer1 = prompt("Please enter the name of player 1");
-// let namePlayer2 = prompt("Please enter the name of player 2");
-// let pointPlayer1 = Number(prompt("Please enter the point of player 2"));
-// let pointPlayer2 = Number(prompt("Please enter the point of player 2"));
-
 function receiveNamesAndPoints(namePlayer1, namePlayer2,  pointPlayer1, pointPlayer2 ) {
     let totalPuntos = pointPlayer1 + pointPlayer2
     
