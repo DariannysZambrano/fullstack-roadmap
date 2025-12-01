@@ -19,6 +19,20 @@ function verify(Integer1, integer2) {
 
 verify(60, -80)
 
+//Ejemplo de como quedaria este codigo con el operador ternario
+function verify(Integer1, integer2) {
+    // Para Integer1
+    console.log(
+        "the integer number one is " + (Integer1 < 0 ? "N E G A T I V E" : "P O S I T I V E")
+    );
+    // Para integer2
+    console.log(
+        "the integer number two is " + (integer2 < 0 ? "N E G A T I V E" : "P O S I T I V E")
+    );
+}
+
+verify(60, -80);
+
 
 // ejercicio numero dos donde llegue a incluir la posibilidad de que los numeros fueran 0
 function verify(Integer1, integer2) {
