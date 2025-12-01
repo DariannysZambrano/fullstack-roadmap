@@ -13,22 +13,48 @@
 // - Quién debe sacar en este momento
 // - Si el juego ha terminado y quién ganó
 
-function receiveNamesAndPoints(namePlayer1, namePlayer2,  pointPlayer1, pointPlayer2 ) {
-    let totalPuntos = pointPlayer1 + pointPlayer2
-    
-    if(pointPlayer1 === 11){
-        console.log("La ganadora es " + namePlayer1 + " !! 🎉🎊🎀😸")
-        return
-    }else if(pointPlayer2 === 11){
-         console.log("La ganadora es " + namePlayer2 + " !! 🎨🎈🧨✨")
-         return;
-    }
 
-    if(totalPuntos %2){
-        console.log("Saca el jugador: " + namePlayer2)
-    }else{
-         console.log("Saca el jugador: " + namePlayer1)
+function receiveNamesAndPoints(namePlayer1, namePlayer2, pointPlayer1, pointPlayer2) {
+    let totalPuntos = pointPlayer1 + pointPlayer2;
+
+    if (pointPlayer1 === 11 || pointPlayer2 === 11) {
+        if (pointPlayer1 === 11) {
+            console.log("La ganadora es " + namePlayer1 + " !! 🎉🎊🎀😸")
+        } else {
+            console.log("La ganadora es " + namePlayer2 + " !! 🎨🎈🧨✨")
+        }
+    } else {
+        if(totalPuntos % 2) {
+            console.log("Saca el jugador: " + namePlayer2)
+        } else {
+            console.log("Saca el jugador: " + namePlayer1)
+        }
     }
 }
+receiveNamesAndPoints("luan", "dary", 8, 5);
 
-receiveNamesAndPoints("luan", "dary", 10,11);
+
+// este codigo no cumple con la optimizacion, tiene un else if que sobra
+
+
+// function receiveNamesAndPoints(namePlayer1, namePlayer2, pointPlayer1, pointPlayer2) {
+//     let totalPuntos = pointPlayer1 + pointPlayer2
+
+//     if (pointPlayer1 === 11) {
+//         console.log("La ganadora es " + namePlayer1 + " !! 🎉🎊🎀😸")
+//         return
+//     } else if (pointPlayer2 === 11) {
+//         console.log("La ganadora es " + namePlayer2 + " !! 🎨🎈🧨✨")
+//         return;
+//     }
+
+//     if (totalPuntos % 2) {
+//         console.log("Saca el jugador: " + namePlayer2)
+//     } else {
+//         console.log("Saca el jugador: " + namePlayer1)
+//     }
+// }
+
+// receiveNamesAndPoints("luan", "dary", 10, 11);
+
+
