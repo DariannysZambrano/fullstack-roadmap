@@ -9,6 +9,6 @@
    if(randomNumber === userNumber ){
     console.log("Good Work")
    }else{
-    "Not matched"
+    console.log("Not matched")
    }
 
