@@ -42,7 +42,7 @@ function verify(Integer1, integer2) {
 verify(0, 0)
 
 
-//aqui cree una funcion que no imprime nada, solo retorna.
+//aqui cree una funcion que no imprime nada, solo retorna; segui el manual.
 
 function verify(Integer1, integer2){
     if (Integer1 < 0 || integer2 < 0 ){
