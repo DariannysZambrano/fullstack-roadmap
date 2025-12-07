@@ -15,4 +15,37 @@
 // input: [1, 2, [2], 5, 6, [2]]
 // output: [4, 8, 20, 24]
 
+function multiplyArray(array) {
+  let fatherArray = [];
+  let childArray = [];
 
+  //EVITAR PROXIMO DOLOR DE CABEZA type of RETORNA "number" no "Number" todo en minusculas!!
+  // nuevo metodo desbloqueado: .flat sirve para extraer un array anidado
+
+  for (let index = 0; index < array.length; index++) {
+    if (typeof array[index] === "number") {
+      fatherArray.push(array[index]);
+    }else {
+      childArray.push(array[index]);
+    }
+  }
+  let nestedArray = childArray.flat();
+
+  let multiplicationResult = 1;
+  for (let index = 0; index < nestedArray.length; index++) {
+    multiplicationResult = multiplicationResult * nestedArray[index];
+  }
+
+  let finalResult = [];
+  for (let index = 0; index < fatherArray.length; index++) {
+    finalResult.push(fatherArray[index] * multiplicationResult);
+  }
+
+  return finalResult;
+}
+
+console.log(multiplyArray([2, 3, [2], 4]));
+console.log(multiplyArray([[3], 1, 5, 4]));
+console.log(multiplyArray([5, 2, 1, 4, 3, [2, 3], 2]));
+console.log(multiplyArray([1, 2, 3]));
+console.log(multiplyArray([1, 2, [2], 5, 6, [2]]));
