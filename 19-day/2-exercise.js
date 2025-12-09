@@ -8,3 +8,5 @@ function arrayDoesNotContain1or3(array) {
   console.log(result)
 }
 arrayDoesNotContain1or3([1, 3, 4, 5]);
+
+
