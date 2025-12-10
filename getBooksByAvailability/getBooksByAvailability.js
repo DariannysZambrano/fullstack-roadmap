@@ -453,7 +453,7 @@ const bookCollection = [
 function getBooksByAvailability(isAvailability) {
   let arrayResult = [];
   for (let index = 0; index < bookCollection.length; index++) {
-    if (bookCollection(index).isAvailable === isAvailability){
+    if (bookCollection[index].isAvailable === isAvailability){
       arrayResult.push(bookCollection[index]);
     }
   }
