@@ -13,8 +13,16 @@
 
 let prices = [10, 10, 20, 30, 40, 50, 60];
 
+// let total = 0;
+// for (let index = 0; index < prices.length; index++) {
+//   total += prices[index];
+// }
+// console.log(total);
+
+// forma sencilla de hacerlo
+
 let total = 0;
-for (let index = 0; index < prices.length; index++) {
-  total += prices[index];
-}
+prices.forEach((index) => {
+  total += index;
+});
 console.log(total);
