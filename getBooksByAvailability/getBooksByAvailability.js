@@ -453,7 +453,7 @@ const bookCollection = [
 function getBooksByAvailability(isAvailability) {
   let arrayResult = [];
   for (let index = 0; index < bookCollection.length; index++) {
-    if (bookCollection[index].isAvailable === isAvailability){
+    if (bookCollection[index].isAvailable === isAvailability) {
       arrayResult.push(bookCollection[index]);
     }
   }
@@ -463,9 +463,9 @@ function getBooksByAvailability(isAvailability) {
 console.log(getBooksByAvailability(true));
 console.log(getBooksByAvailability(false));
 
-function getBooksForYearsRange(añoInicial, AñoFinal){
-    for (let index = 0; index < añoInicial.length; index++) {
-        const element = array[index];
-        
+function getBooksForYearsRange(añoInicial, AñoFinal) {
+  for (let index = 0; index < bookCollection.length; index++) {
+    if ( bookCollection[index].publicationYear || bookCollection[index].publicationYear) {
     }
+  }
 }
