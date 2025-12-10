@@ -6,9 +6,19 @@ function receiveNum(array){
     for(let index = 0; index<array.length; index++){
         if(array[index] % 2 === 0){
            contar++;
-        }else{
-            console.log(index); 
         }
-    }
+    } return contar;
 }
-receiveNum([1,2,3,4,5,6,7,8,9,10])
+console.log(receiveNum([1,2,3,4,5,6,7,8,9,10]));
+
+// function receiveNum(array){
+//     let contar = 0;
+//     for(let index = 0; index<array.length; index++){
+//         if(array[index] % 2 === 0){
+//            contar++;
+//         }else{
+//             console.log(index); 
+//         }
+//     }
+// }
+// receiveNum([1,2,3,4,5,6,7,8,9,10])
