@@ -464,5 +464,8 @@ console.log(getBooksByAvailability(true));
 console.log(getBooksByAvailability(false));
 
 function getBooksForYearsRange(añoInicial, AñoFinal){
-    
+    for (let index = 0; index < añoInicial.length; index++) {
+        const element = array[index];
+        
+    }
 }
