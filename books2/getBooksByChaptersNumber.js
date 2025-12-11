@@ -11,19 +11,6 @@
 //  the function should receive only one number parameter
 //   that is the minimum amazon rating that the book should have.
 
-// crear una función que devuelva una matriz de libros basada en el número de capítulos,
-//  la función debe llamarse «getBooksByChaptersNumber»,
-//  la función debe recibir solo un parámetro, que es el número mínimo de capítulos que debe tener el libro.
-
-// crear una función que devuelva una matriz de libros de un género específico,
-//  la función debe llamarse «getBooksByGenre»,
-//  la función debe recibir solo un parámetro (el género que deben tener los libros).
-
-// Crear una función que devuelva una matriz de libros basada en la calificación de Amazon.
-// La función debe llamarse «getBooksByAmazonRating».
-//  La función debe recibir solo un parámetro numérico,
-//  que es la calificación mínima de Amazon que debe tener el libro.
-
 const bookCollection = [
   {
     title: "Dune",
