@@ -487,8 +487,7 @@ function getBooksByGenre(texto) {
   return newArray;
 }
 
-console.log(getBooksByGenre([ficcion]));
-
+console.log(getBooksByGenre("ficcion"));
 
 
 function getBooksByAmazonRating(num) {
