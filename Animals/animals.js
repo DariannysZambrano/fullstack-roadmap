@@ -223,3 +223,7 @@ function getAnimalsByColor(specificColor){
 }
 
 console.log(getAnimalsByColor("Brown"));
+console.log(getAnimalsByColor("Reddish-brown"));
+console.log(getAnimalsByColor("Dark Gray"));
+console.log(getAnimalsByColor("Red-brown"));
+console.log(getAnimalsByColor("White, Brown"));
