@@ -1,16 +1,3 @@
-// create a function that returns an array of books based on chapters number,
-//  the function should be named "getBooksByChaptersNumber",
-//  the function should receive only one parameter that is the minimum chapters that the book should have.
-
-// create a function that returns an array of the books of a specific genre,
-//  the function should be named "getBooksByGenre",
-//   the function should receive only one parameter (the genre that the books should have)
-
-// create a function that returns an array of books based on amazon rating,
-// the function should be named "getBooksByAmazonRating",
-//  the function should receive only one number parameter
-//   that is the minimum amazon rating that the book should have.
-
 const bookCollection = [
   {
     title: "Dune",
@@ -463,40 +450,41 @@ const bookCollection = [
   },
 ];
 
-// function getBooksByChaptersNumber(num) {
-//     let books = [];
-//   for (let index = 0; index < bookCollection.length; index++){
-//     if (bookCollection[index].chapters >= num) {
-//       books.push(bookCollection[index]);
-//     }
-//   } return books;
-// }
+/*
+2 Utilizando la matriz bookCollection, escribe una función que:
+Para cada libro:
+Calcule la puntuación media basándose en la matriz ratings (cada puntuación tiene una propiedad score).
+Imprima un mensaje para cada libro como:
+«Dune - Calificación promedio: 4,52».
+También calcule la calificación promedio general de toda la colección, teniendo en cuenta todas las puntuaciones de todos los libros juntos.
+Al final, imprima:
+«Calificación promedio global: X».
+Pista: bucles anidados (libros → calificaciones) Uso de múltiples acumuladores (por libro y global).*/
 
-// console.log(getBooksByChaptersNumber(10));
+/*
+2 Using the bookCollection array, write a function that:
+For each book:
+Calculates the average rating based on the ratings array (each rating has a score property).
+Prints a message for each book like:
+"Dune - Average rating: 4.52"
+Also calculates the overall average rating of the entire collection, considering all scores from all books together.
+At the end, prints:
+"Global average rating: X"
+Hint: Nested loops (books → ratings) Use of multiple accumulators (per book and global).*/
 
-function getBooksByGenre(genre) {
-  let newArray = [];
-  for (let index = 0; index < bookCollection.length; index++) {
-      if (bookCollection[index].genre.includes(genre)) {
-        newArray.push(bookCollection[index])
-      }
-  }
-  return newArray;
-}
-
-console.log(getBooksByGenre("Adventure"));
-
-function getBooksByAmazonRating(rating) {
-  let arraybooks = [];
-  for (let index = 0; index < bookCollection.length; index++) {
-    for (let j = 0; j < bookCollection[index].ratings.length; j++) {
-      if (bookCollection[index].ratings[j].source === "Amazon" && bookCollection[index].ratings[j].score >= rating) {
-        arraybooks.push(bookCollection[index]);
-      }
+function averageRating(bookCollection) {
+  let sumaTotal = 0;
+  let contador = 0;
+  for (let i = 0; i < bookCollection.length; i++) {
+     let sumaLibro = 0;
+    for (let j = 0; j < bookCollection[i].ratings.length; j++) {
+      sumaTotal += bookCollection[i].ratings[j].score;
+      sumaLibro += bookCollection[i].ratings[j].score;
+      contador++;
     }
+    console.log(bookCollection[i].title + " - Average rating: " + sumaLibro / 2);
   }
-  return arraybooks;
+  return " Global average rating: " + sumaTotal / contador;
 }
 
-const books = getBooksByAmazonRating(4.6);
-console.log(JSON.stringify(books, null, 2));
+console.log(averageRating(bookCollection));
