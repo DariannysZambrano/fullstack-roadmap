@@ -1,16 +1,3 @@
-// create a function that returns an array of books based on chapters number,
-//  the function should be named "getBooksByChaptersNumber",
-//  the function should receive only one parameter that is the minimum chapters that the book should have.
-
-// create a function that returns an array of the books of a specific genre,
-//  the function should be named "getBooksByGenre",
-//   the function should receive only one parameter (the genre that the books should have)
-
-// create a function that returns an array of books based on amazon rating,
-// the function should be named "getBooksByAmazonRating",
-//  the function should receive only one number parameter
-//   that is the minimum amazon rating that the book should have.
-
 const bookCollection = [
   {
     title: "Dune",
@@ -463,42 +450,23 @@ const bookCollection = [
   },
 ];
 
-// function getBooksByChaptersNumber(num) {
-//     let books = [];
-//   for (let index = 0; index < bookCollection.length; index++){
-//     if (bookCollection[index].chapters >= num) {
-//       books.push(bookCollection[index]);
-//     }
-//   } return books;
-// }
+/*1. Using the bookCollection array, write a function that:
+Iterates through all the books.
+Considers only books where isAvailable is true.
+Calculates the total number of pages of all available books.
+Returns that total number.
+Output:
+Total pages of available books: X
+Hint: practice filtering with a condition and using an accumulator (totalPages). */
 
-// console.log(getBooksByChaptersNumber(10));
-
-// function getBooksByGenre(genre) {
-//   let newArray = [];
-//   for (let index = 0; index < bookCollection.length; index++) {
-//     for (let j = 0; j < bookCollection[index].genre.length; j++) {
-//       if (bookCollection[index].genre[j] === genre) {
-//         newArray.push(bookCollection[index])
-//       }
-//     }
-//   }
-//   return newArray;
-// }
-
-// console.log(getBooksByGenre("Adventure"));
-
-function getBooksByAmazonRating(rating) {
-  let arraybooks = [];
-  for (let index = 0; index < bookCollection.length; index++) {
-    for (let j = 0; j < bookCollection[index].ratings.length; j++) {
-      if (bookCollection[index].ratings[j].source === "Amazon" && bookCollection[index].ratings[j].score >= rating) {
-        arraybooks.push(bookCollection[index]);
-      }
+function iteratesAllBooks(books) {
+  let totalNumberOfPages = 0;
+  for (let index = 0; index < books.length; index++) {
+    if (bookCollection[index].isAvailable === true) {
+      totalNumberOfPages += bookCollection[index].pages;
     }
   }
-  return arraybooks;
+  return totalNumberOfPages;
 }
 
-const books = getBooksByAmazonRating(4.6);
-console.log(JSON.stringify(books, null, 2));
+console.log(iteratesAllBooks(bookCollection));
