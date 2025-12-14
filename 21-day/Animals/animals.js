@@ -216,7 +216,7 @@ const animalsCollection = [
 function getAnimalsByColor(specificColor){
     let countAnimals = 0;
    for (let index = 0; index < animalsCollection.length; index++) {
-    if(animalsCollection[index].color.includes(specificColor)){
+    if(animalsCollection[index].color.toLowerCase().includes(specificColor.toLowerCase())){
         countAnimals ++;
     }
    } return "the numbers of animals is " + countAnimals;

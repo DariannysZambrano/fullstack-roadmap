@@ -486,6 +486,8 @@ function getBooksByGenre(genre) {
 
 console.log(getBooksByGenre("Adventure"));
 
+
+
 function getBooksByAmazonRating(rating) {
   let arraybooks = [];
   for (let index = 0; index < bookCollection.length; index++) {
