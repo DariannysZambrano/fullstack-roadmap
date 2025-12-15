@@ -456,18 +456,18 @@ const bookCollection = [
 
 // 1. Exercise: Print Book Summaries
 // Function Name: logBookSummaries
-// Instruction: Use forEach to iterate through the bookCollection. 
+// Instruction: Use forEach to iterate through the bookCollection.
 // For each book, log a string to the console in this format: "Title by Author (Year)".
 // Example Output: "Dune by Frank Herbert (1965)"
 // Hint: Use template literals \`\${}\` to format the string.
 
-function logBookSummaries(books) {
-    books.forEach((book) => { 
-        console.log(`${book.title}  by  ${book.author}  (${book.publicationYear})`)
-    }); 
-}
+// function logBookSummaries(books) {
+//     books.forEach((book) => {
+//         console.log(`${book.title}  by  ${book.author}  (${book.publicationYear})`)
+//     });
+// }
 
-logBookSummaries(bookCollection);
+// logBookSummaries(bookCollection);
 
 // 2. Exercise: Count Available Books
 // Function Name: countAvailableBooks
@@ -476,6 +476,16 @@ logBookSummaries(bookCollection);
 // Example Output: 18
 // Hint: Initialize a counter variable outside the loop.
 
+// function countAvailableBooks(books) {
+//   let count = 0;
+//   books.forEach((book) => {
+//     if (book.isAvailable) {
+//       count++;
+//     }
+//   });
+//   return count;
+// }
+// console.log(countAvailableBooks(bookCollection));
 
 // 3. Exercise: Filter Sci-Fi Books
 // Function Name: getSciFiBooks
@@ -483,6 +493,17 @@ logBookSummaries(bookCollection);
 // Use forEach to push matching titles into a new array.
 // Example Output: ["Dune", "1984", "Fahrenheit 451", ...]
 // Hint: Check if book.genre.includes("Science Fiction").
+
+function getSciFiBooks(books) {
+  let newArray = [];
+  books.forEach((book) => {
+    if (book.genre.includes("Science Fiction")) {
+      newArray.push(book.title);
+      console.log(newArray)
+    } 
+  });
+}
+getSciFiBooks(bookCollection);
 
 // 4. Exercise: Find Highest Rated Book
 // Function Name: findHighestRatedBook
