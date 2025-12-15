@@ -494,30 +494,62 @@ const bookCollection = [
 // Example Output: ["Dune", "1984", "Fahrenheit 451", ...]
 // Hint: Check if book.genre.includes("Science Fiction").
 
-function getSciFiBooks(books) {
-  let newArray = [];
-  books.forEach((book) => {
-    if (book.genre.includes("Science Fiction")) {
-      newArray.push(book.title);
-      console.log(newArray)
-    } 
-  });
-}
-getSciFiBooks(bookCollection);
+// function getSciFiBooks(books) {
+//   let newArray = [];
+//   books.forEach((book) => {
+//     if (book.genre.includes("Science Fiction")) {
+//       newArray.push(book.title);
+//     }
+//   });
+//   return newArray;
+// }
+
+// console.log(getSciFiBooks(bookCollection));
+
+// function getSciFiBooks(books) {
+//   let newArray = [];
+//   for (let index = 0; index < books.length; index++) {
+//     if (books[index].genre.includes("Science Fiction")) {
+//       newArray.push(books[index].title);
+//     }
+//   }
+
+//   return newArray;
+// }
+// console.log(getSciFiBooks(bookCollection));
 
 // 4. Exercise: Find Highest Rated Book
 // Function Name: findHighestRatedBook
-// Instruction: Create a function that finds the book with the highest rating from "Goodreads".
+// Instruction: Create a function that finds
+// the book with the highest rating from "Goodreads".
 // Use forEach to compare each book's rating against a current maximum.
 // Example Output: "The Name of the Wind" (assuming it has the highest score)
-// Hint: Initialize a variable for the max score and one for the best book. Update them if the current book's score is higher.
+// Hint: Initialize a variable for the max score and one for the best book.
+//  Update them if the current book's score is higher.
+
+function findHighestRatedBook(books) {
+  let maxScore = 0;
+  let bestBook = "";
+  books.forEach((book) => {
+    if (book.ratings[0].score > maxScore) {
+      maxScore = book.ratings[0].score;
+      bestBook = book.title;
+    }
+  });
+  return bestBook;
+}
+console.log(findHighestRatedBook(bookCollection));
 
 // 5. Exercise: Keyword Aggregator
 // Function Name: collectAllKeywords
-// Instruction: Create a function that collects all keywords from all books into a single array.
-// Use forEach to iterate over books, and a nested forEach (or spread operator) to add keywords to a master list.
+// Instruction: Create a function that collects all
+//  keywords from all books into a single array.
+// Use forEach to iterate over books, and a nested forEach 
+// (or spread operator) to add keywords to a master list.
 // Example Output: ["desert planet", "ecology", "politics", "religion", "giant worms", "regency england", ...]
 // Hint: You can use another forEach inside the main forEach to loop through book.keywords.
+
+
 
 // 6. Exercise: Publisher Frequency
 // Function Name: countBooksByPublisher
