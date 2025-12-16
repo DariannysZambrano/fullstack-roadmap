@@ -479,4 +479,4 @@ function createNewObject(pagesPerGenre) {
   return newObject;
 }
 
-console.table(createNewObject(bookCollection));
+console.log(createNewObject(bookCollection));
