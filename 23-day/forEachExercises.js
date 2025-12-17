@@ -467,7 +467,7 @@ function logBookSummaries(books) {
     });
 }
 
-logBookSummaries(bookCollection);
+// logBookSummaries(bookCollection);
 
 // 2. Exercise: Count Available Books
 // Function Name: countAvailableBooks
@@ -485,7 +485,7 @@ function countAvailableBooks(books) {
   });
   return count;
 }
-console.log(countAvailableBooks(bookCollection));
+// console.log(countAvailableBooks(bookCollection));
 
 // 3. Exercise: Filter Sci-Fi Books
 // Function Name: getSciFiBooks
@@ -504,19 +504,9 @@ function getSciFiBooks(books) {
   return newArray;
 }
 
-console.log(getSciFiBooks(bookCollection));
+// console.log(getSciFiBooks(bookCollection));
 
-function getSciFiBooks(books) {
-  let newArray = [];
-  for (let index = 0; index < books.length; index++) {
-    if (books[index].genre.includes("Science Fiction")) {
-      newArray.push(books[index].title);
-    }
-  }
 
-  return newArray;
-}
-console.log(getSciFiBooks(bookCollection));
 
 // 4. Exercise: Find Highest Rated Book
 // Function Name: findHighestRatedBook
@@ -538,7 +528,7 @@ function findHighestRatedBook(books) {
   });
   return bestBook;
 }
-console.log(findHighestRatedBook(bookCollection));
+// console.log(findHighestRatedBook(bookCollection));
 
 // 5. Exercise: Keyword Aggregator
 // Function Name: collectAllKeywords
@@ -559,7 +549,7 @@ function collectAllKeywords(books) {
   return newArray;
 }
 
-console.log(collectAllKeywords(bookCollection));
+// console.log(collectAllKeywords(bookCollection));
 
 function collectAllKeywords(books) {
   let newArray = [];
@@ -589,7 +579,7 @@ function countBooksByPublisher(books) {
   });
   return newObject;
 }
-console.log(countBooksByPublisher(bookCollection));
+// console.log(countBooksByPublisher(bookCollection));
 
 // 7. Exercise: Mark Reading Status
 // Function Name: markReadingStatus
@@ -609,7 +599,7 @@ function markReadingStatus(books) {
   });
   return books
 }
-console.log(markReadingStatus(bookCollection));
+// console.log(markReadingStatus(bookCollection));
 
 // 8. Exercise: Print Chapter Info
 // Function Name: logChapterCounts
@@ -629,7 +619,7 @@ function logChapterCounts(books) {
   });
 }
 
-logChapterCounts(bookCollection);
+// logChapterCounts(bookCollection);
 
 // 9. Exercise: Author Bibliography
 // Function Name: organizeBooksByAuthor
@@ -663,7 +653,7 @@ function organizeBooksByAuthor(collection) {
   });
   return authors;
 }
-console.log(organizeBooksByAuthor(bookCollection));
+// console.log(organizeBooksByAuthor(bookCollection));
 
 // 10. Exercise: High Quality Books
 // Function Name: getHighRatedBooks
@@ -686,4 +676,4 @@ function getHighRatedBooks(books) {
    return newArray;
 }
 
-console.log(getHighRatedBooks(bookCollection));
+// console.log(getHighRatedBooks(bookCollection));
