@@ -456,25 +456,49 @@ const bookCollection = [
 
 // 1. Exercise: Extract Titles
 // Function Name: getTitles
-// Instruction: Use the .map() method to iterate over the `bookCollection` array. For each book object, extract the `title` property. Return a new array of strings where each string is a book title.
+// Instruction: Use the .map() method to iterate over the `bookCollection` array.
+// For each book object, extract the `title` property. Return a new array of strings where each string is a book title.
 // Example Output: ["Dune", "Pride and Prejudice", ...]
 // Hint: Return `book.title` inside the callback function.
 
-function getTitles(){
-    
+function getTitles(books) {
+ return books.map((book) => {
+    return book.title;
+  });
 }
+
+console.log(getTitles(bookCollection));
 
 // 2. Exercise: Authors in Uppercase
 // Function Name: getAuthorsUpperCase
-// Instruction: Use .map() to create a new array of author names. Inside the callback, access the `author` property and convert it to uppercase using the `.toUpperCase()` string method.
+// Instruction: Use .map() to create a new array of author names. Inside the callback,
+// access the `author` property and convert it to uppercase using the `.toUpperCase()` string method.
 // Example Output: ["FRANK HERBERT", "JANE AUSTEN", ...]
 // Hint: `return book.author.toUpperCase()`.
 
+function getAuthorsUpperCase(books) {
+  return books.map((book) => {
+    return book.author.toUpperCase();
+  });
+}
+// console.log(getAuthorsUpperCase(bookCollection));
+
 // 3. Exercise: Title and Year Objects
 // Function Name: getTitleAndYear
-// Instruction: Use .map() to create a new array of objects. For each book, return a NEW object that only contains two properties: `title` (from the book's title) and `publicationYear` (from the book's publicationYear).
+// Instruction: Use .map() to create a new array of objects. For each book, return a NEW object that only contains two properties:
+//  `title` (from the book's title) and `publicationYear` (from the book's publicationYear).
 // Example Output: [{ title: "Dune", publicationYear: 1965 }, { title: "Pride and Prejudice", publicationYear: 1813 }, ...]
 // Hint: Return a new object literal: `return { title: book.title, publicationYear: book.publicationYear };`
+
+function getTitleAndYear(books) {
+  return books.map((book) => {
+    return {
+      title: book.title,
+      publicationYear: book.publicationYear,
+    };
+  });
+}
+// console.log(getTitleAndYear(bookCollection));
 
 // 4. Exercise: Formatted Strings
 // Function Name: getBookInfoStrings
@@ -524,3 +548,8 @@ function getTitles(){
 // - `value`: The book's ISBN string.
 // Example Output: [{ label: "Dune - Frank Herbert", value: "978-0441172719" }, ...]
 // Hint: Return `{ label: `${book.title} - ${book.author}`, value: book.isbn }`.
+
+
+// un raton se reproduce una vez al mes 12 ratoncitos, despues del segundo mes se reproduce dos meses 
+
+// 

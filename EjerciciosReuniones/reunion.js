@@ -13,6 +13,16 @@ function invertir(string) {
 }
 console.log(invertir("hola mundo"));
 
+function reverseWithForEach(text) {
+  const characters = text.split("");
+  let reversedText = "";
+  characters.forEach((char) => {
+    reversedText = char + reversedText;
+  });
+  return reversedText;
+}
+console.log(reverseWithForEach("Hola mundo"));
+
 /*
  * Crea una función que reciba dos cadenas como parámetro (str1, str2)
  * e imprima otras dos cadenas como salida (out1, out2).
