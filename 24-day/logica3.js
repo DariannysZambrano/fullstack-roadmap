@@ -30,7 +30,7 @@ message "Good Work" if the input matches the guess number otherwise "Not matched
 Math.trunc(0.847362) → elimina decimales */
 
 function guessNumber(userGuess) {
-  let RandomNum = Math.floor(Math.random () * 10) +1;
+  let RandomNum = Math.floor(Math.random() * 10) + 1;
   console.log("the number was: " + RandomNum);
   if (userGuess === RandomNum) {
     console.log("Good Work");
@@ -50,6 +50,26 @@ Expected Output :
 60°C is 140 °F
 45°F is 7.222222222222222°C */
 
+// F=(C×9/5)+32
+
+// C=(F−32)×5/9
+
+
+function convertirGrados(grados) {
+    let grado = parseInt(grados)
+  if (grados.toLowerCase().includes("c")) {
+    let fahrenheit = (grado * 9 / 5) + 32;
+    return fahrenheit + "°f";
+  } else if (grados.toLowerCase().includes("f")) {
+    let Celsius = (grado - 32) * 5 / 9;
+    return Celsius + "°c";
+  } else {
+    console.log("indica la unidad C o F");
+  }
+}
+
+console.log(convertirGrados("45F"));
+
 // 16. Sum Two Integers (Triple if Equal)
 
 // Write a JavaScript program to compute the sum of the two given integers.
@@ -65,19 +85,17 @@ function sumTwoIntegers(int1, int2) {
 }
 console.log(sumTwoIntegers(8, 5));
 
-
 // 18. Check if Number or Sum is 50
 
 // Write a JavaScript program to check a pair of numbers and return true
 // if one of the numbers is 50 or if their sum is 50.
 
 function checkFifty(num1, num2) {
-    let sum = num1 + num2
-    if((num1 === 50) || (num2 === 50) || (sum === 50)){
-        return true
-    }else{
-        return false
-    }
+  let sum = num1 + num2;
+  if (num1 === 50 || num2 === 50 || sum === 50) {
+    return true;
+  } else {
+    return false;
+  }
 }
-console.log(checkFifty(10, 25))
-
+console.log(checkFifty(10, 25));
