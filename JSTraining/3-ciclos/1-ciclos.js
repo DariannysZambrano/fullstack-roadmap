@@ -168,11 +168,11 @@ console.log(saludoParseado);
 // -------------------------------------------------- CREA TU CODIGO AQUI --------------------------------------------------
 
 let contador = 0;
-
-for (let contador = 1; contador <= 100; contador++) {
-  if (contador % 10 === 0) {
-   console.log(contador);
-  }
+for( let i =10; i <=100; i++){
+    if(contador %10 === 0){
+       console.log(i)
+    }
+    contador++
 }
 
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------

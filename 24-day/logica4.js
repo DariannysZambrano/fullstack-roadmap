@@ -1,8 +1,6 @@
 // Par o impar
 // Crea una función que reciba un número y determine si es par o impar.
 
-
-
 function parOImpar(num) {
   if (num % 2 === 0) {
     console.log("par");
@@ -163,5 +161,24 @@ function parOImpar(arr) {
 
 console.log(parOImpar(array5));
 
+//  Convertir a mayúsculas
+// Convierte la primera letra de cada palabra a mayúscula.
+
+let frase = "feliz navidad a todos los lindos";
+let newFrase = "";
+
+frase = frase.at(0).toUpperCase() + frase.slice(1);
+
+for (let i = 0; i < frase.length; i++) {
+  if (frase[i] === " ") {
+    newFrase += " ";
+    newFrase += frase[i + 1].toUpperCase();
+  } else if (frase[i - 1] === " ") {
+    newFrase = newFrase;
+  } else {
+    newFrase += frase[i];
+  }
+}
+console.log(newFrase);
 
 
