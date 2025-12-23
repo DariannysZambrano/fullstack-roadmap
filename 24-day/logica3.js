@@ -194,7 +194,6 @@ const baseDeDatos = {
 };
 
 function findName(object, name) {
-  for (let i = 0; i < object.length; i++) {
     for (let j = 0; j < object.usuarios.length; j++) {
       if (object.usuarios[i] === name) {
         console.log("encontrado");
@@ -203,6 +202,6 @@ function findName(object, name) {
       }
     }
   }
-}
+
 
 findName(baseDeDatos, "ana");
