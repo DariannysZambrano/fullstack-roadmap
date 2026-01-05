@@ -1,4 +1,4 @@
-const usersDataBase = require("./user-database.json")
+const usersDataBase = require("./user-database.json");
 
 const medicalHistoryBD = require("./medical_history.json");
 
@@ -6,37 +6,34 @@ const medicalHistoryBD = require("./medical_history.json");
 // de pregabalina que suministramos en nuestros centros medicos, de nuestro sistema de informacion
 // de inventario nos informan que ese lote fue consumido en su totalidad durante el 2024, teniendo
 
-
 // esta informacion crea un script que permita identificar que pacientes fueron medicados con
 // pregabalina durante el 2024, rapidooo necesitamos contactar a estos usuarios
 // (en el resultado debe estar el correo de los usuarios para poder contactarlos)
 
-function findUserMedication(){
+function findUserMedication() {
+  const IdUsers = new Set();
+  const usersEmails = [];
 
-  const IdUsers = new Set()
-  const usersEmails = []
- 
-  medicalHistoryBD.forEach(record => {
-    record.medicationsUsed.forEach(medication => {
-      if (medication === "Pregabalina" && record.date.slice(0,4) === "2024" ) {
-        IdUsers.add(record.userId)
+  medicalHistoryBD.forEach((record) => {
+    record.medicationsUsed.forEach((medication) => {
+      if (medication === "Pregabalina" && record.date.slice(0, 4) === "2024") {
+        IdUsers.add(record.userId);
       }
     });
   });
 
-  usersDataBase.forEach(user => {
-    IdUsers.forEach(idUser=> {
+  usersDataBase.forEach((user) => {
+    IdUsers.forEach((idUser) => {
       if (idUser === user.userId) {
-        usersEmails.push(user.email)
+        usersEmails.push(user.email);
       }
     });
   });
 
-  return usersEmails
+  return usersEmails;
 }
 
 // console.log( findUserMedication())
-
 
 // resulta que en medio de una reunion con nuestros medicos el doctor Alberto Martínez nos informo que un paciente
 // se comunico con el para preguntarle acerca de unas indicaciones que el doctor le habia dado en su cita
@@ -46,31 +43,30 @@ function findUserMedication(){
 //  hospitales en los que estuvo para poder realizar nuestro respectivo informe.
 
 function findUsersAndHospitals() {
-  const hospitals = new Set()
-  const idUsers = new Set()
-  const usersNames = new Set()
-  let list = {}
+  const hospitals = new Set();
+  const idUsers = new Set();
+  const usersNames = new Set();
+  let list = {};
 
-  medicalHistoryBD.forEach(user => {
+  medicalHistoryBD.forEach((user) => {
     if (user.doctor === "Dr. Alberto Martínez") {
-      idUsers.add(user.userId)
-      hospitals.add(user.hospitalName)
+      idUsers.add(user.userId);
+      hospitals.add(user.hospitalName);
     }
   });
 
-  usersDataBase.forEach(usuario => {
+  usersDataBase.forEach((usuario) => {
     if (idUsers.has(usuario.userId)) {
-      usersNames.add(usuario.firstName + " " + usuario.lastName)
+      usersNames.add(usuario.firstName + " " + usuario.lastName);
     }
-    
   });
 
   list = {
     hospitalsList: Array.from(hospitals),
-    userNmaesList: Array.from(usersNames)
-  }
+    userNmaesList: Array.from(usersNames),
+  };
 
-  return list 
+  return list;
 }
 
 // console.log(findUsersAndHospitals())
@@ -80,7 +76,7 @@ function findUsersAndHospitals() {
 //  centros medicos le suministraron Warfarina y Meloxicam en una misma visita, esta combinacion puede ser
 //  mortal porque no se debe combinar anticoagulantes con antiinflamatorios no esteroides, no tenemos una
 //  lista de los medicamentos que usamos pero con la base de datos que tenemos podemos determinar cuales
-//   son los medicamentos que utilizamos luego de que tengas esa lista de medicamentos 
+//   son los medicamentos que utilizamos luego de que tengas esa lista de medicamentos
 //  investiga cuales
 //   de ahi son antiinflamatorios no esteroides y luego de eso realiza un script que permita identificar
 //   a los doctores que suministraron Warfarina con alguno de esos antiinflamatorios no esteroides,
@@ -88,8 +84,84 @@ function findUsersAndHospitals() {
 //    obtener el nombre los hospitales donde sucedio esto y ademas el nombre de los usuarios para
 //    poder contactarlos y llegar a una conciliacion con ellos antes de que se sumen a esta demanda.
 
-
-
+function investigarCombinacionesPeligrosas(clinicalRecordDB){
+    let anticoagulante = "Warfarina";
+    let antiinflamatorios = [
+        "Ibuprofeno",
+        "Meloxicam",
+        "Naproxeno",
+        "Diclofenaco",
+        "Ketoprofeno",
+        "Celecoxib",
+        "Indometacina",
+        "Piroxicam",
+        "Ketorolaco"
+    ];
+    let casosPeligrosos = [];
+    let doctoresInvolucrados = new Set();
+    let hospitalesInvolucrados = new Set();
+    let pacientesAfectados = new Set();
+    for(let i = 0; i < clinicalRecordDB.length; i++){
+        let registro = clinicalRecordDB[i];
+        let medicamentos = registro.medicationsUsed;
+        if(!medicamentos || !Array.isArray(medicamentos)){
+            continue;
+        }
+        let tieneWarfarina = false;
+        let aiinesEncontrados = [];
+        for(let j = 0; j < medicamentos.length; j++){
+            if(!medicamentos[j]){
+                continue;
+            }
+            if(medicamentos[j].toLowerCase() === anticoagulante.toLowerCase()){
+                tieneWarfarina = true;
+            }
+        }
+        if(tieneWarfarina){
+            for(let k = 0; k < medicamentos.length; k++){
+                if(!medicamentos[k]){
+                    continue;
+                }
+                for(let m = 0; m < antiinflamatorios.length; m++){
+                    if(medicamentos[k].toLowerCase() === antiinflamatorios[m].toLowerCase()){
+                        aiinesEncontrados.push(medicamentos[k]);
+                    }
+                }
+            }
+        }
+        if(tieneWarfarina && aiinesEncontrados.length > 0){
+            casosPeligrosos.push({
+                fecha: registro.date,
+                doctorName: registro.doctor,
+                hospitalName: registro.hospitalName,
+                userId: registro.userId,
+                antiinflamatorios: aiinesEncontrados
+            });
+            doctoresInvolucrados.add(registro.doctor);
+            hospitalesInvolucrados.add(registro.hospitalName);
+            pacientesAfectados.add(registro.userId);
+        }
+    }
+    let pacientesContacto = [];
+    for(let i = 0; i < usersDB.length; i++){
+        if(pacientesAfectados.has(usersDB[i].userId)){
+            pacientesContacto.push({
+                userId: usersDB[i].userId,
+                nombre: usersDB[i].firstName + " " + usersDB[i].lastName,
+                email: usersDB[i].email,
+                ciudad: usersDB[i].city
+            });
+        }
+    }
+    return {
+        totalCasosPeligrosos: casosPeligrosos.length,
+        casosPeligrosos: casosPeligrosos,
+        doctoresInvolucrados: Array.from(doctoresInvolucrados),
+        hospitalesInvolucrados: Array.from(hospitalesInvolucrados),
+        pacientesAfectados: pacientesContacto
+    };
+}
+console.log(investigarCombinacionesPeligrosas(clinicalRecordDB));
 
 // la Warfarina es un anticoagulante muy potente y su dosis debe ser controlada con una exactitud muy alta,
 // nos informaron que existen doctores en nuestra red que han suministrado este medicamente mas de 1 vez en una
@@ -109,36 +181,43 @@ function findUsersAndHospitals() {
 // ]
 
 function findDoctors() {
-  let idUsers = new Set()
-  let doctors = new Set()
-  let dates = []
-  const usersNames = new Set()
- 
-  medicalHistoryBD.forEach(record => {
-     let count = 0;
-    record.medicationsUsed.forEach(medication => {
+  let report = {}
+  let fullName = ""
+
+  medicalHistoryBD.forEach((record) => {
+    let count = 0;
+    record.medicationsUsed.forEach((medication) => {
       if (medication === "Warfarina") {
-        count ++
-      } 
-      
+        count++;
+      }
     });
     if (count > 1) {
-        idUsers.add(record.userId)
-        doctors.add(record.doctor)
-        dates.push(record.date)
+      if (!report[record.doctor]) {
+        report[record.doctor] = {
+          doctor: record.doctor,
+          idUsers: [],
+          dates: [],
+        };
+      }
+
+      report[record.doctor].idUsers.push(record.userId);
+      report[record.doctor].dates.push(record.date);
+    }
+    usersDataBase.forEach(user => {
+      if(user.userId === record.userId){
+        fullName = user.firstName + " " + user.lastName
+
       }
   });
-
-  usersDataBase.forEach(user => {
-    if(idUsers.has(user.userId)){
-      usersNames.add(user.firstName + " " + user.lastName)
-    }
   });
 
-  
 
-  return usersNames
-  
+
+  return Object.values(report);
 }
 
-console.log(findDoctors())
+console.log(findDoctors());
+
+
+
+// }
